@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secure Note</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    #note {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #333;
+      width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🔒 Secure Note</h2>
+
+  <input type="password" id="password" placeholder="Enter password">
+  <button onclick="unlockNote()">Unlock</button>
+
+  <p id="message" class="error"></p>
+
+  <div id="note">
+    <h3>Secret Note</h3>
+    <p>This is a confidential message 🔐</p>
+  </div>
+
+  <script>
+    const correctPassword = "1234"; // change this
+
+    function unlockNote() {
+      const input = document.getElementById("password").value;
+      const note = document.getElementById("note");
+      const message = document.getElementById("message");
+
+      if (input === correctPassword) {
+        note.style.display = "block";
+        message.textContent = "";
+      } else {
+        note.style.display = "none";
+        message.textContent = "Incorrect password!";
+      }
+    }
+  </script>
+
+</body>
+</html>
