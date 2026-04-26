@@ -1,0 +1,50 @@
+Risk Assessment (8 Risks with Details)
+
+Search returns inaccurate results
+Likelihood: Medium (3)
+Impact: High (4)
+Risk Score: 12
+Mitigation Plan: Improve search algorithm and add filtering options
+Risk Owner: Developer
+Slow search performance with many notes
+Likelihood: High (4)
+Impact: High (4)
+Risk Score: 16
+Mitigation Plan: Optimize database indexing and use caching
+Risk Owner: Backend Developer
+Application crashes during search
+Likelihood: Medium (3)
+Impact: High (4)
+Risk Score: 12
+Mitigation Plan: Add proper error handling and thorough testing
+Risk Owner: QA / Developer
+Keyword matching is too strict (misses results)
+Likelihood: Medium (3)
+Impact: Medium (3)
+Risk Score: 9
+Mitigation Plan: Implement partial matching or fuzzy search
+Risk Owner: Developer
+Sensitive notes exposed in search results
+Likelihood: Low (2)
+Impact: Very High (5)
+Risk Score: 10
+Mitigation Plan: Add authentication and access control mechanisms
+Risk Owner: Security Team
+Poor UI/UX makes search confusing
+Likelihood: Medium (3)
+Impact: Medium (3)
+Risk Score: 9
+Mitigation Plan: Improve interface design and conduct user testing
+Risk Owner: UI/UX Designer
+Search feature not working offline
+Likelihood: Medium (3)
+Impact: Medium (3)
+Risk Score: 9
+Mitigation Plan: Add offline support or notify users when unavailable
+Risk Owner: Developer
+Data loss or missing notes in results
+Likelihood: Low (2)
+Impact: High (4)
+Risk Score: 8
+Mitigation Plan: Implement backup systems and data validation checks
+Risk Owner: System Administrator
