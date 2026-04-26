@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-title">Notes</span>
+        <button class="btn-new" onclick="newNote()">+ New</button>
+      </div>
+      <div class="notes-list" id="notesList"></div>
+    </div>
+
+    <!-- Editor -->
+    <div class="editor" id="editor">
+
+      <!-- Empty state -->
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">✎</div>
+        <div class="empty-title">No note selected</div>
+        <div class="empty-sub">Create a new note to get started</div>
+      </div>
+
+      <!-- Note editor (hidden until a note is open) -->
+      <div id="noteEditor" style="display:none; flex-direction:column; flex:1;">
+
+        <div class="editor-top">
+          <textarea
+            class="title-input"
+            id="titleInput"
+            placeholder="Note title..."
+            rows="1"
+            oninput="autoResize(this); markDirty()"
+          ></textarea>
+        </div>
+
+        <div class="editor-meta">
+          <span class="meta-tag" id="metaDate">—</span>
+          <span class="meta-tag" id="metaWords">0 words</span>
+        </div>
+
+        <div class="content-area">
+          <textarea
+            class="content-input"
+            id="contentInput"
+            placeholder="Start writing..."
+            oninput="markDirty(); updateMeta()"
+          ></textarea>
+        </div>
+
+        <div class="editor-footer">
+          <span class="char-count" id="charCount">0 characters</span>
+          <button class="btn-save" onclick="saveNote()">Save note</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
