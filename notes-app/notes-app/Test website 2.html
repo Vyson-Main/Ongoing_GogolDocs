@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secure Note</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    #note, #unlockSection {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .box {
+      margin: 10px;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🔐 Secure Note</h2>
+
+  <!-- Create Password Section -->
+  <div id="createSection">
+    <h3>Create Password</h3>
+    <input type="password" id="newPassword" placeholder="Set password">
+    <button onclick="setPassword()">Save Password</button>
+  </div>
+
+  <!-- Unlock Section -->
+  <div id="unlockSection">
+    <h3>Unlock Note</h3>
+    <input type="password" id="passwordInput" placeholder="Enter password">
+    <button onclick="unlockNote()">Unlock</button>
+    <p id="message" class="error"></p>
+  </div>
+
+  <!-- Note -->
+  <div id="note">
+    <h3>Secret Note</h3>
+    <p>This is your private note 🔒</p>
+  </div>
+
+  <script>
+    let savedPassword = "";
+
+    function setPassword() {
+      const newPass = document.getElementById("newPassword").value;
+
+      if (newPass === "") {
+        alert("Please enter a password!");
+        return;
+      }
+
+      savedPassword = newPass;
+
+      document.getElementById("createSection").style.display = "none";
+      document.getElementById("unlockSection").style.display = "block";
+    }
+
+    function unlockNote() {
+      const input = document.getElementById("passwordInput").value;
+      const message = document.getElementById("message");
+
+      if (input === savedPassword) {
+        document.getElementById("note").style.display = "block";
+        message.textContent = "";
+      } else {
+        message.textContent = "Incorrect password!";
+      }
+    }
+  </script>
+
+</body>
+</html>
