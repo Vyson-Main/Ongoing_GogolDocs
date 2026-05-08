@@ -1,0 +1,10 @@
+User Story:
+As a user, I want to unlock a secure note so that I can access its content.
+
+Acceptance Criteria:
+
+User can input password
+
+Correct password unlocks the note
+
+Incorrect password shows error
